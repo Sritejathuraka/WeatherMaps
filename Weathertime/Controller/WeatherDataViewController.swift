@@ -111,21 +111,25 @@ class WeatherDataViewController: UIViewController, CLLocationManagerDelegate {
             })
         }
     }
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "showMap" {
-////            let destinationController = segue.destination as! FullMapViewController
-//            if let mainLat = WeatherDataManager.sharedInstance.latitude {
-//                if let mainLon = WeatherDataManager.sharedInstance.longitude {
-//                    if let mapCityTemp = WeatherDataManager.sharedInstance.currentData {
-//                        //                    destinationController.locLatitude = mainLat
-//                        //                    destinationController.locLongitude = mainLon
-//                        //                    destinationController.cityName = WeatherDataManager.sharedInstance.cityName
-//                        //                    destinationController.cityTemp = Int(mapCityTemp.currentTemp)
-//                    }
-//                }
-//            }
-//        }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showMap" {
+            let destinationController = segue.destination as! FullMapViewController
+            if let mainLat = WeatherDataManager.sharedInstance.latitude {
+                if let mainLon = WeatherDataManager.sharedInstance.longitude {
+                    if let mapCityTemp = WeatherDataManager.sharedInstance.currentData {
+                        if let weatherIcon = WeatherDataManager.sharedInstance.currentData {
+                            destinationController.locLatitude = mainLat
+                            destinationController.locLongitude = mainLon
+                            destinationController.cityName = WeatherDataManager.sharedInstance.cityName
+                            destinationController.cityTemp = Int(mapCityTemp.currentTemp)
+                            destinationController.weatherIconName = weatherIcon.weatherIcon
+                            destinationController.weatherCondition = weatherIcon.currentSum
+                        }
+                    }
+                }
+            }
+        }
+    }
     func updateUI () {
         let currentData = WeatherDataManager.sharedInstance.currentData
         DispatchQueue.main.async {
