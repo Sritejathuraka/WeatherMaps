@@ -23,9 +23,11 @@
 		326A0F002087E7BB005FE29F /* HourlyForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326A0EFF2087E7BB005FE29F /* HourlyForecast.swift */; };
 		3279F0C5207FBFD00003AD3D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3279F0C4207FBFD00003AD3D /* Constants.swift */; };
 		32AB87322088FFAA0096E781 /* WeatherDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB87312088FFAA0096E781 /* WeatherDataManager.swift */; };
+		32CA7EEA209561F100241196 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CA7EE9209561F100241196 /* SettingsViewController.swift */; };
 		32DE29C620818E6A0049135D /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DE29C520818E6A0049135D /* CurrentWeather.swift */; };
 		32DE29CA2082810C0049135D /* DayForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DE29C92082810C0049135D /* DayForecast.swift */; };
 		32E70D64208F04E700D6D152 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32E70D63208F04E700D6D152 /* Main.storyboard */; };
+		32F78E7C2091645200B83969 /* mac sierra.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 32F78E7B2091645200B83969 /* mac sierra.jpg */; };
 		32FE25D6207F1EE3001C498F /* sun.png in Resources */ = {isa = PBXBuildFile; fileRef = 32FE25D5207F1EE3001C498F /* sun.png */; };
 		7E7FEE4222FB4747F1C4F0B4 /* Pods_Weathertime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F767C38FE899875285E1EB /* Pods_Weathertime.framework */; };
 /* End PBXBuildFile section */
@@ -70,9 +72,11 @@
 		326A0EFF2087E7BB005FE29F /* HourlyForecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyForecast.swift; sourceTree = "<group>"; };
 		3279F0C4207FBFD00003AD3D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		32AB87312088FFAA0096E781 /* WeatherDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataManager.swift; sourceTree = "<group>"; };
+		32CA7EE9209561F100241196 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		32DE29C520818E6A0049135D /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
 		32DE29C92082810C0049135D /* DayForecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayForecast.swift; sourceTree = "<group>"; };
 		32E70D63208F04E700D6D152 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		32F78E7B2091645200B83969 /* mac sierra.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "mac sierra.jpg"; sourceTree = "<group>"; };
 		32FE25D5207F1EE3001C498F /* sun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sun.png; sourceTree = "<group>"; };
 		4557460543F94DBB9BD64422 /* Pods-Weathertime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weathertime.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Weathertime/Pods-Weathertime.debug.xcconfig"; sourceTree = "<group>"; };
 		5C2F44BE033A87E44F03DC6E /* Pods-Weathertime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weathertime.release.xcconfig"; path = "Pods/Target Support Files/Pods-Weathertime/Pods-Weathertime.release.xcconfig"; sourceTree = "<group>"; };
@@ -163,6 +167,7 @@
 				325F800D2077F3FB00B3B4E7 /* Storyboard */,
 				325F7FDA2077F00100B3B4E7 /* AppDelegate.swift */,
 				325F7FE12077F00100B3B4E7 /* Assets.xcassets */,
+				32F78E7B2091645200B83969 /* mac sierra.jpg */,
 				32FE25D5207F1EE3001C498F /* sun.png */,
 				325F7FE62077F00100B3B4E7 /* Info.plist */,
 			);
@@ -212,6 +217,7 @@
 			children = (
 				32232C00207E735900F0B1F5 /* WeatherDataViewController.swift */,
 				324B7120208F9392002B3D18 /* FullMapViewController.swift */,
+				32CA7EE9209561F100241196 /* SettingsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -354,6 +360,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				32FE25D6207F1EE3001C498F /* sun.png in Resources */,
+				32F78E7C2091645200B83969 /* mac sierra.jpg in Resources */,
 				325F7FE52077F00100B3B4E7 /* LaunchScreen.storyboard in Resources */,
 				325F7FE22077F00100B3B4E7 /* Assets.xcassets in Resources */,
 				32E70D64208F04E700D6D152 /* Main.storyboard in Resources */,
@@ -428,6 +435,7 @@
 				32232BFB207BC6B900F0B1F5 /* APIWrapper.swift in Sources */,
 				32232C03207E7BB900F0B1F5 /* DetailedWeatherTableViewCell.swift in Sources */,
 				326A0F002087E7BB005FE29F /* HourlyForecast.swift in Sources */,
+				32CA7EEA209561F100241196 /* SettingsViewController.swift in Sources */,
 				324B7121208F9392002B3D18 /* FullMapViewController.swift in Sources */,
 				32346E7D207EEEE400F7FFFF /* DayForecastTableViewCell.swift in Sources */,
 				32AB87322088FFAA0096E781 /* WeatherDataManager.swift in Sources */,

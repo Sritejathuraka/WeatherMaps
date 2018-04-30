@@ -70,6 +70,7 @@ class APIWrapper: NSObject {
                 if let hourlyWeatherData = allData["hourly"] as? [String: AnyObject] {
                     if let hourlyData = hourlyWeatherData["data"] as? [Dictionary<String, AnyObject>] {
                         var hrlyForeCasts = [HourlyForecast]()
+                        print(hourlyData)
                         for obj in hourlyData {
                             hrlyForeCasts.append(HourlyForecast(hourlyWeatherDict: obj))
                         }
@@ -82,8 +83,6 @@ class APIWrapper: NSObject {
                 
                 if let dailyWeatherData = allData["daily"] as? [String: AnyObject] {
                     if let dailyData = dailyWeatherData["data"] as? [Dictionary<String, AnyObject>] {
-                        print(dailyData)
-                        
                         var dayForecasts = [DayForecast]()
                         for obj in dailyData {
                             dayForecasts.append(DayForecast.init(dailyWeatherDict: obj))

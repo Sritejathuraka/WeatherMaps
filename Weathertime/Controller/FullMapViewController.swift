@@ -32,7 +32,7 @@ class FullMapViewController: UIViewController, CLLocationManagerDelegate, MKMapV
         annotation.subtitle = "\(cityTemp!)°F / \(weatherCondition!)"
         annotation.coordinate = location
         self.mapView.showAnnotations([annotation], animated: true)
-        self.mapView.selectAnnotation(annotation, animated: true)
+        self.mapView.selectAnnotation(annotation, animated: true )
         
     }
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {

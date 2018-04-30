@@ -20,6 +20,7 @@ class DayForecastTableViewCell: UITableViewCell, CLLocationManagerDelegate {
         collectionView.backgroundColor = UIColor.clear
         mapView.isHidden = true
     }
+    
     func updateMapCell(mapLatitude: Double, mapLongitude: Double ) {
         
         mapView.isHidden = false
@@ -29,7 +30,6 @@ class DayForecastTableViewCell: UITableViewCell, CLLocationManagerDelegate {
         let annotation = MKPointAnnotation()
         annotation.coordinate = location
         self.mapView.addAnnotation(annotation)
-        
         // Set the Zoom level
         let region = MKCoordinateRegionMakeWithDistance(annotation.coordinate, 500, 500)
         self.mapView.setRegion((region), animated: false)
