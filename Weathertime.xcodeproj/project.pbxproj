@@ -26,6 +26,8 @@
 		32CA7EEA209561F100241196 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CA7EE9209561F100241196 /* SettingsViewController.swift */; };
 		32DE29C620818E6A0049135D /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DE29C520818E6A0049135D /* CurrentWeather.swift */; };
 		32DE29CA2082810C0049135D /* DayForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DE29C92082810C0049135D /* DayForecast.swift */; };
+		32E36C84209786FF0053DDC5 /* Privacy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E36C83209786FF0053DDC5 /* Privacy.swift */; };
+		32E36C86209787CB0053DDC5 /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E36C85209787CB0053DDC5 /* PrivacyViewController.swift */; };
 		32E70D64208F04E700D6D152 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32E70D63208F04E700D6D152 /* Main.storyboard */; };
 		32F78E7C2091645200B83969 /* mac sierra.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 32F78E7B2091645200B83969 /* mac sierra.jpg */; };
 		32FE25D6207F1EE3001C498F /* sun.png in Resources */ = {isa = PBXBuildFile; fileRef = 32FE25D5207F1EE3001C498F /* sun.png */; };
@@ -75,6 +77,8 @@
 		32CA7EE9209561F100241196 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		32DE29C520818E6A0049135D /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
 		32DE29C92082810C0049135D /* DayForecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayForecast.swift; sourceTree = "<group>"; };
+		32E36C83209786FF0053DDC5 /* Privacy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Privacy.swift; sourceTree = "<group>"; };
+		32E36C85209787CB0053DDC5 /* PrivacyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyViewController.swift; sourceTree = "<group>"; };
 		32E70D63208F04E700D6D152 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		32F78E7B2091645200B83969 /* mac sierra.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "mac sierra.jpg"; sourceTree = "<group>"; };
 		32FE25D5207F1EE3001C498F /* sun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sun.png; sourceTree = "<group>"; };
@@ -199,6 +203,7 @@
 				32DE29C520818E6A0049135D /* CurrentWeather.swift */,
 				32DE29C92082810C0049135D /* DayForecast.swift */,
 				326A0EFF2087E7BB005FE29F /* HourlyForecast.swift */,
+				32E36C83209786FF0053DDC5 /* Privacy.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -218,6 +223,7 @@
 				32232C00207E735900F0B1F5 /* WeatherDataViewController.swift */,
 				324B7120208F9392002B3D18 /* FullMapViewController.swift */,
 				32CA7EE9209561F100241196 /* SettingsViewController.swift */,
+				32E36C85209787CB0053DDC5 /* PrivacyViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -433,6 +439,7 @@
 				32232C01207E735900F0B1F5 /* WeatherDataViewController.swift in Sources */,
 				32232C07207E801B00F0B1F5 /* forecastCollectionViewCell.swift in Sources */,
 				32232BFB207BC6B900F0B1F5 /* APIWrapper.swift in Sources */,
+				32E36C84209786FF0053DDC5 /* Privacy.swift in Sources */,
 				32232C03207E7BB900F0B1F5 /* DetailedWeatherTableViewCell.swift in Sources */,
 				326A0F002087E7BB005FE29F /* HourlyForecast.swift in Sources */,
 				32CA7EEA209561F100241196 /* SettingsViewController.swift in Sources */,
@@ -440,6 +447,7 @@
 				32346E7D207EEEE400F7FFFF /* DayForecastTableViewCell.swift in Sources */,
 				32AB87322088FFAA0096E781 /* WeatherDataManager.swift in Sources */,
 				32346E7B207EEDD400F7FFFF /* ForecastDayCollectionViewCell.swift in Sources */,
+				32E36C86209787CB0053DDC5 /* PrivacyViewController.swift in Sources */,
 				326A0EFE2087DE31005FE29F /* CurrentWeatherDeatilsTableViewCell.swift in Sources */,
 				325F7FDB2077F00100B3B4E7 /* AppDelegate.swift in Sources */,
 			);
@@ -536,7 +544,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -587,7 +595,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -600,13 +608,15 @@
 			baseConfigurationReference = 4557460543F94DBB9BD64422 /* Pods-Weathertime.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 37B3DTEVW5;
 				INFOPLIST_FILE = Weathertime/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = teja.com.Weathertime;
+				PRODUCT_BUNDLE_IDENTIFIER = teja.com.Weathertime.doi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -617,13 +627,15 @@
 			baseConfigurationReference = 5C2F44BE033A87E44F03DC6E /* Pods-Weathertime.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 37B3DTEVW5;
 				INFOPLIST_FILE = Weathertime/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = teja.com.Weathertime;
+				PRODUCT_BUNDLE_IDENTIFIER = teja.com.Weathertime.doi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

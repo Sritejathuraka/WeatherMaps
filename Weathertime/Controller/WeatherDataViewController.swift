@@ -13,7 +13,7 @@ import MapKit
 import SafariServices
 
 
-class WeatherDataViewController: UIViewController, CLLocationManagerDelegate {
+class WeatherDataViewController: UIViewController {
     
         @IBOutlet weak var viewLeadingConstraint: NSLayoutConstraint!
         @IBOutlet weak var sideBlurView: UIVisualEffectView!
@@ -32,93 +32,67 @@ class WeatherDataViewController: UIViewController, CLLocationManagerDelegate {
         let locationManager = CLLocationManager()
         var currentLocation: CLLocation!
         
-        override func viewDidLoad() {
-            super.viewDidLoad()
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Do any additional setup after loading the view.
+        sideMenuSwiping()
+        headerView.backgroundColor = UIColor.clear
+        tableView.separatorStyle = .none
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = self.tableView.rowHeight
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        self.locationAuthorization()
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = UIColor.clear
+    }
+ 
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
+    func locationAuthorization() {
+        if CLLocationManager.authorizationStatus() != .authorizedWhenInUse {
+          locationManager.requestWhenInUseAuthorization()
+          locationManager.startUpdatingLocation()
+        } else {
+            locationManager.startUpdatingLocation()
             
-            // Do any additional setup after loading the view.
-            sideMenuSwiping()
-            headerView.backgroundColor = UIColor.clear
-            tableView.separatorStyle = .none
-            self.tableView.rowHeight = UITableViewAutomaticDimension
-            self.tableView.estimatedRowHeight = self.tableView.rowHeight
-    //        mainImageView.isHidden = true
-            locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyBest
-            locationManager.requestWhenInUseAuthorization()
-            locationManager.startMonitoringSignificantLocationChanges()
-            self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-            self.navigationController?.navigationBar.shadowImage = UIImage()
-            self.navigationController?.navigationBar.isTranslucent = true
-            self.navigationController?.view.backgroundColor = UIColor.clear
-            locationAuthorization()
         }
+        
+    }
 
       
-        @IBAction func changeSegmented(_ sender: Any) {
-            let currentData = WeatherDataManager.sharedInstance.currentData
-            if let temp = currentData?.currentTemp {
-                switch self.segmentedControl.selectedSegmentIndex {
-                case 0:
-                    self.currentTempLabel.text = "\(temp)"
-                    if let highTemp = currentData?.highTemp {
-                        if let lowtemp = currentData?.lowTemp {
-                            self.highAndLowTempLabel.text = "\(highTemp) / \(lowtemp)"
-                        }
+    @IBAction func changeSegmented(_ sender: Any) {
+        let currentData = WeatherDataManager.sharedInstance.currentData
+        if let temp = currentData?.currentTemp {
+            switch self.segmentedControl.selectedSegmentIndex {
+            case 0:
+                self.currentTempLabel.text = "\(temp)"
+                if let highTemp = currentData?.highTemp {
+                    if let lowtemp = currentData?.lowTemp {
+                        self.highAndLowTempLabel.text = "\(highTemp) / \(lowtemp)"
                     }
-                case 1:
-                    self.currentTempLabel.text = "\(Double(round((temp - 32) * 0.5556)))"
-                    if let highTemp = currentData?.highTemp {
-                        if let lowtemp = currentData?.lowTemp {
-                            self.highAndLowTempLabel.text = "\(Double(round((highTemp - 32) * 0.5556))) / \(Double(round((lowtemp - 32) * 0.5556)))"
-                        }
-                    }
-                default:
-                    break
                 }
-            }
-            self.tableView.reloadData()
-        }
-        
-        
-        @IBAction func locationButton(_ sender: Any) {
-            self.locationAuthorization()
-            APIWrapper.sharedInstance.downloadCurrentWeatherDetails {
-                self.updateUI()
-                self.lookUpCurrentLocation()
-            }
-        }
-        override var preferredStatusBarStyle: UIStatusBarStyle {
-            return .lightContent
-        }
-        func locationAuthorization() {
-            if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
-                currentLocation = locationManager.location
-                WeatherDataManager.sharedInstance.latitude = currentLocation.coordinate.latitude
-                WeatherDataManager.sharedInstance.longitude = currentLocation.coordinate.longitude
-            }
-            if CLLocationManager.authorizationStatus() != .authorizedWhenInUse {
-                
-                locationManager.requestWhenInUseAuthorization()
-            }
-        }
-        func lookUpCurrentLocation() {
-            // Use the last reported location.
-            if let lastLocation = self.locationManager.location {
-                print(lastLocation.coordinate)
-                let geocoder = CLGeocoder()
-                
-                // Look up the location and pass it to the completion handler
-                geocoder.reverseGeocodeLocation(lastLocation,completionHandler: { (placemarks, error) in
-                    if error == nil {
-                        let firstLocation = placemarks?[0]
-                        if let currentCityName = firstLocation?.locality {
-                            WeatherDataManager.sharedInstance.cityName = currentCityName
-                            self.cityNameLabel.text = currentCityName
-                        }
+            case 1:
+                self.currentTempLabel.text = "\(Double(round((temp - 32) * 0.5556)))"
+                if let highTemp = currentData?.highTemp {
+                    if let lowtemp = currentData?.lowTemp {
+                        self.highAndLowTempLabel.text = "\(Double(round((highTemp - 32) * 0.5556))) / \(Double(round((lowtemp - 32) * 0.5556)))"
                     }
-                })
+                }
+            default:
+                break
             }
         }
+        self.tableView.reloadData()
+    }
+        
+        
+    
         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             if segue.identifier == "showMap" {
                 let destinationController = segue.destination as! FullMapViewController
@@ -179,6 +153,9 @@ class WeatherDataViewController: UIViewController, CLLocationManagerDelegate {
             if let todayDate = currentData?.dateAndTime {
                 dateAndTimeLabel.text = "Today, \(todayDate)"
             }
+//            if let locationName = currentData?.cityName {
+//               cityNameLabel.text = locationName
+//            }
         }
     }
     extension WeatherDataViewController: UITableViewDelegate, UITableViewDataSource {
@@ -323,6 +300,12 @@ class WeatherDataViewController: UIViewController, CLLocationManagerDelegate {
             guard let vedioURL = URL(string: "https://darksky.net/forecast/\(WeatherDataManager.sharedInstance.latitude!),\(WeatherDataManager.sharedInstance.longitude!)/uk212/en") else { return }
             let safariViewController = SFSafariViewController(url: vedioURL)
             present(safariViewController, animated: true, completion: nil)
+            if viewLeadingConstraint.constant == 0 {
+                UIView.animate(withDuration: 0.2, animations: {
+                    self.viewLeadingConstraint.constant = -175
+                    self.view.layoutIfNeeded()
+                })
+            }
       }
         @IBAction func panAction(_ sender: UIPanGestureRecognizer) {
             if sender.state == .began || sender.state == .changed {
@@ -361,5 +344,40 @@ class WeatherDataViewController: UIViewController, CLLocationManagerDelegate {
         }
         
     }
+
+extension WeatherDataViewController: CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if locations.count > 0 {
+            WeatherDataManager.sharedInstance.latitude = locations[0].coordinate.latitude
+            WeatherDataManager.sharedInstance.longitude = locations[0].coordinate.longitude
+            APIWrapper.sharedInstance.downloadCurrentWeatherDetails {
+                self.updateUI()
+            }
+        }
+    }
+}
+
+/*@IBAction func locationButton(_ sender: Any) {
+    //            self.locationAuthorization()
+    //            APIWrapper.sharedInstance.downloadCurrentWeatherDetails {
+    //                self.updateUI()
+    //                self.lookUpCurrentLocation()
+    //            }
+    //        }
+    //        override var preferredStatusBarStyle: UIStatusBarStyle {
+    //            return .lightContent
+    //        }
+    //        func locationAuthorization() {
+    //            if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
+    //                currentLocation = locationManager.location
+    //                WeatherDataManager.sharedInstance.latitude = currentLocation.coordinate.latitude
+    //                WeatherDataManager.sharedInstance.longitude = currentLocation.coordinate.longitude
+    //            }
+    //            if CLLocationManager.authorizationStatus() != .authorizedWhenInUse {
+    //
+    //                locationManager.requestWhenInUseAuthorization()
+    //            }
+} */
 
 
