@@ -29,7 +29,6 @@
 		32E36C84209786FF0053DDC5 /* Privacy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E36C83209786FF0053DDC5 /* Privacy.swift */; };
 		32E36C86209787CB0053DDC5 /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E36C85209787CB0053DDC5 /* PrivacyViewController.swift */; };
 		32E70D64208F04E700D6D152 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32E70D63208F04E700D6D152 /* Main.storyboard */; };
-		32F78E7C2091645200B83969 /* mac sierra.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 32F78E7B2091645200B83969 /* mac sierra.jpg */; };
 		32FE25D6207F1EE3001C498F /* sun.png in Resources */ = {isa = PBXBuildFile; fileRef = 32FE25D5207F1EE3001C498F /* sun.png */; };
 		7E7FEE4222FB4747F1C4F0B4 /* Pods_Weathertime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F767C38FE899875285E1EB /* Pods_Weathertime.framework */; };
 /* End PBXBuildFile section */
@@ -80,7 +79,6 @@
 		32E36C83209786FF0053DDC5 /* Privacy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Privacy.swift; sourceTree = "<group>"; };
 		32E36C85209787CB0053DDC5 /* PrivacyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyViewController.swift; sourceTree = "<group>"; };
 		32E70D63208F04E700D6D152 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		32F78E7B2091645200B83969 /* mac sierra.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "mac sierra.jpg"; sourceTree = "<group>"; };
 		32FE25D5207F1EE3001C498F /* sun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sun.png; sourceTree = "<group>"; };
 		4557460543F94DBB9BD64422 /* Pods-Weathertime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weathertime.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Weathertime/Pods-Weathertime.debug.xcconfig"; sourceTree = "<group>"; };
 		5C2F44BE033A87E44F03DC6E /* Pods-Weathertime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weathertime.release.xcconfig"; path = "Pods/Target Support Files/Pods-Weathertime/Pods-Weathertime.release.xcconfig"; sourceTree = "<group>"; };
@@ -171,7 +169,6 @@
 				325F800D2077F3FB00B3B4E7 /* Storyboard */,
 				325F7FDA2077F00100B3B4E7 /* AppDelegate.swift */,
 				325F7FE12077F00100B3B4E7 /* Assets.xcassets */,
-				32F78E7B2091645200B83969 /* mac sierra.jpg */,
 				32FE25D5207F1EE3001C498F /* sun.png */,
 				325F7FE62077F00100B3B4E7 /* Info.plist */,
 			);
@@ -366,7 +363,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				32FE25D6207F1EE3001C498F /* sun.png in Resources */,
-				32F78E7C2091645200B83969 /* mac sierra.jpg in Resources */,
 				325F7FE52077F00100B3B4E7 /* LaunchScreen.storyboard in Resources */,
 				325F7FE22077F00100B3B4E7 /* Assets.xcassets in Resources */,
 				32E70D64208F04E700D6D152 /* Main.storyboard in Resources */,

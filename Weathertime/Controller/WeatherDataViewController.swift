@@ -36,7 +36,7 @@ class WeatherDataViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        sideMenuSwiping()
+//        sideMenuSwiping()
         headerView.backgroundColor = UIColor.clear
         tableView.separatorStyle = .none
         self.tableView.rowHeight = UITableViewAutomaticDimension
@@ -154,10 +154,18 @@ class WeatherDataViewController: UIViewController {
                 dateAndTimeLabel.text = "Today, \(todayDate)"
             }
 //            if let locationName = currentData?.cityName {
-//               cityNameLabel.text = locationName
+              let locationName = CLLocation(latitude: WeatherDataManager.sharedInstance.latitude, longitude: WeatherDataManager.sharedInstance.longitude)
+                CLGeocoder().reverseGeocodeLocation(locationName) { (placemarks, error) in
+                    if error != nil {
+                        return
+                    }else if ((currentData?.cityName = placemarks?.first?.locality) != nil) {
+                        self.cityNameLabel.text = currentData?.cityName
+                    }
 //            }
-        }
+            }
     }
+    
+}
     extension WeatherDataViewController: UITableViewDelegate, UITableViewDataSource {
         
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -272,13 +280,13 @@ class WeatherDataViewController: UIViewController {
         }
     }
     extension WeatherDataViewController {
-        func sideMenuSwiping() {
-            sideBlurView.layer.cornerRadius = 15
-            sideView.layer.shadowColor = UIColor.black.cgColor
-            sideView.layer.shadowOpacity = 0.8
-            sideView.layer.shadowOffset = CGSize(width: 5, height: 0)
-            viewLeadingConstraint.constant = -175
-        }
+//        func sideMenuSwiping() {
+//            sideBlurView.layer.cornerRadius = 15
+//            sideView.layer.shadowColor = UIColor.black.cgColor
+//            sideView.layer.shadowOpacity = 0.8
+//            sideView.layer.shadowOffset = CGSize(width: 5, height: 0)
+//            viewLeadingConstraint.constant = -175
+//        }
         @IBAction func sideHomeAction(_ sender: Any) {
             if viewLeadingConstraint.constant == 0 {
                 UIView.animate(withDuration: 0.2, animations: {
@@ -288,24 +296,33 @@ class WeatherDataViewController: UIViewController {
             }
         }
         
-        @IBAction func sideMenuAction(_ sender: Any) {
-            if viewLeadingConstraint.constant < 20 {
-                UIView.animate(withDuration: 0.2, animations: {
-                    self.viewLeadingConstraint.constant = 0
-                    self.view.layoutIfNeeded()
-                })
-            }
-        }
+//        @IBAction func sideMenuAction(_ sender: Any) {
+//            if viewLeadingConstraint.constant < 20 {
+//                UIView.animate(withDuration: 0.2, animations: {
+//                    self.viewLeadingConstraint.constant = 0
+//                    self.view.layoutIfNeeded()
+//                })
+//            }
+//            guard let vedioURL = URL(string: "https://darksky.net/forecast/\(WeatherDataManager.sharedInstance.latitude!),\(WeatherDataManager.sharedInstance.longitude!)/uk212/en") else { return }
+//            let safariViewController = SFSafariViewController(url: vedioURL)
+//            present(safariViewController, animated: true, completion: nil)
+//            if viewLeadingConstraint.constant == 0 {
+//                UIView.animate(withDuration: 0.2, animations: {
+//                    self.viewLeadingConstraint.constant = -175
+//                    self.view.layoutIfNeeded()
+//                })
+//            }
+//        }
         @IBAction func sideDarkInfo(_sender: Any) {
             guard let vedioURL = URL(string: "https://darksky.net/forecast/\(WeatherDataManager.sharedInstance.latitude!),\(WeatherDataManager.sharedInstance.longitude!)/uk212/en") else { return }
             let safariViewController = SFSafariViewController(url: vedioURL)
             present(safariViewController, animated: true, completion: nil)
-            if viewLeadingConstraint.constant == 0 {
-                UIView.animate(withDuration: 0.2, animations: {
-                    self.viewLeadingConstraint.constant = -175
-                    self.view.layoutIfNeeded()
-                })
-            }
+//            if viewLeadingConstraint.constant == 0 {
+//                UIView.animate(withDuration: 0.2, animations: {
+//                    self.viewLeadingConstraint.constant = -175
+//                    self.view.layoutIfNeeded()
+//                })
+//            }
       }
         @IBAction func panAction(_ sender: UIPanGestureRecognizer) {
             if sender.state == .began || sender.state == .changed {
