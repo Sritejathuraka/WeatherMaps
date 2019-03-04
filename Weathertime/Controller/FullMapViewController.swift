@@ -23,12 +23,22 @@ class FullMapViewController: UIViewController, CLLocationManagerDelegate, MKMapV
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let currentData = WeatherDataManager.sharedInstance.currentData
         mapView.delegate = self
         let latitude: CLLocationDegrees = locLatitude
         let longitude: CLLocationDegrees = locLongitude
         let location: CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude, longitude)
         let annotation = MKPointAnnotation()
-        annotation.title = cityName
+        let locationName = CLLocation(latitude: WeatherDataManager.sharedInstance.latitude, longitude: WeatherDataManager.sharedInstance.longitude)
+        CLGeocoder().reverseGeocodeLocation(locationName) { (placemarks, error) in
+            if error != nil {
+                return
+            }else if ((currentData?.cityName = placemarks?.first?.locality) != nil) {
+              self.cityName = currentData?.cityName
+                annotation.title = self.cityName
+            }
+        }
+     
         annotation.subtitle = "\(cityTemp!)°F / \(weatherCondition!)"
         annotation.coordinate = location
         self.mapView.showAnnotations([annotation], animated: true)

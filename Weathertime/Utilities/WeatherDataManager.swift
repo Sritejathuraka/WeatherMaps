@@ -21,4 +21,5 @@ class WeatherDataManager {
     var hourlyData = [HourlyForecast]()
     var dayForecast = [DayForecast]()
     
+    
 }

@@ -155,7 +155,7 @@ class WeatherDataViewController: UIViewController {
             }
 //            if let locationName = currentData?.cityName {
               let locationName = CLLocation(latitude: WeatherDataManager.sharedInstance.latitude, longitude: WeatherDataManager.sharedInstance.longitude)
-                CLGeocoder().reverseGeocodeLocation(locationName) { (placemarks, error) in
+                 CLGeocoder().reverseGeocodeLocation(locationName) { (placemarks, error) in
                     if error != nil {
                         return
                     }else if ((currentData?.cityName = placemarks?.first?.locality) != nil) {
@@ -163,6 +163,8 @@ class WeatherDataViewController: UIViewController {
                     }
 //            }
             }
+            
+            
     }
     
 }

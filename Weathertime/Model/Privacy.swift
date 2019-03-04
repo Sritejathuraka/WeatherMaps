@@ -7,10 +7,10 @@
 //
 
 import Foundation
-
 class Privacy {
     
     var privacy = "asfdfjhsdbvjhvcusvcjwhVCSVCSUDCVSCVSDKUCVSDKJCHV Sgkhcvwjhcvcqkuyvf dcc HACVWU"
     var lisence = "dkjsbwbciywbcwbvbcjsdbcweuifbhcsndcv web cs hjbsdvc jsbvCISOHFBWOHVBCS HJDBCHWSDBCHJSBCSBCHSBDCJHSABDCHLS"
     
 }
+

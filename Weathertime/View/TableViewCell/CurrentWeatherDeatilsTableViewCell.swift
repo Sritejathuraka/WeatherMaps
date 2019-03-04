@@ -38,7 +38,7 @@ class CurrentWeatherDeatilsTableViewCell: UITableViewCell {
             pressurelabel.text = "\(pressure) mb"
         }
         if let humidity = currentweather.humidity {
-            humidityLabel.text = "\(humidity * 100) %"
+            humidityLabel.text = "\(Double(round((humidity * 100)))) %"
         }
         if let windSpeed = currentweather.windSpeed {
             windSpeedLabel.text = "\(windSpeed) mph"
