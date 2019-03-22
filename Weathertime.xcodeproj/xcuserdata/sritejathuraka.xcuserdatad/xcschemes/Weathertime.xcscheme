@@ -111,6 +111,7 @@
    </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "Release"
+      customArchiveName = "Weather Zone"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>
