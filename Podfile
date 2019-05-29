@@ -5,5 +5,6 @@ use_frameworks!
 
 target 'Weathertime' do
 pod 'Alamofire', '~> 4.0'
+pod 'GooglePlaces'
 
 end

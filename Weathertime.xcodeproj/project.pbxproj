@@ -19,6 +19,8 @@
 		325F7FE52077F00100B3B4E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 325F7FE32077F00100B3B4E7 /* LaunchScreen.storyboard */; };
 		325F7FF02077F00100B3B4E7 /* WeathertimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325F7FEF2077F00100B3B4E7 /* WeathertimeTests.swift */; };
 		325F7FFB2077F00100B3B4E7 /* WeathertimeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325F7FFA2077F00100B3B4E7 /* WeathertimeUITests.swift */; };
+		3266963A228FCF0A00A658C6 /* clear.png in Resources */ = {isa = PBXBuildFile; fileRef = 32669639228FCF0A00A658C6 /* clear.png */; };
+		3266963C228FD7B900A658C6 /* clearSun.png in Resources */ = {isa = PBXBuildFile; fileRef = 3266963B228FD7B800A658C6 /* clearSun.png */; };
 		326A0EFE2087DE31005FE29F /* CurrentWeatherDeatilsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326A0EFD2087DE31005FE29F /* CurrentWeatherDeatilsTableViewCell.swift */; };
 		326A0F002087E7BB005FE29F /* HourlyForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326A0EFF2087E7BB005FE29F /* HourlyForecast.swift */; };
 		3279F0C5207FBFD00003AD3D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3279F0C4207FBFD00003AD3D /* Constants.swift */; };
@@ -70,6 +72,8 @@
 		325F7FF62077F00100B3B4E7 /* WeathertimeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeathertimeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		325F7FFA2077F00100B3B4E7 /* WeathertimeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeathertimeUITests.swift; sourceTree = "<group>"; };
 		325F7FFC2077F00100B3B4E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32669639228FCF0A00A658C6 /* clear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clear.png; sourceTree = "<group>"; };
+		3266963B228FD7B800A658C6 /* clearSun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clearSun.png; sourceTree = "<group>"; };
 		326A0EFD2087DE31005FE29F /* CurrentWeatherDeatilsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherDeatilsTableViewCell.swift; sourceTree = "<group>"; };
 		326A0EFF2087E7BB005FE29F /* HourlyForecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyForecast.swift; sourceTree = "<group>"; };
 		3279F0C4207FBFD00003AD3D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -170,7 +174,9 @@
 				325F800C2077F3DA00B3B4E7 /* Controller */,
 				325F800D2077F3FB00B3B4E7 /* Storyboard */,
 				325F7FDA2077F00100B3B4E7 /* AppDelegate.swift */,
+				3266963B228FD7B800A658C6 /* clearSun.png */,
 				325F7FE12077F00100B3B4E7 /* Assets.xcassets */,
+				32669639228FCF0A00A658C6 /* clear.png */,
 				329B228C222C785600400DAC /* Appicon.png */,
 				32FE25D5207F1EE3001C498F /* sun.png */,
 				325F7FE62077F00100B3B4E7 /* Info.plist */,
@@ -268,6 +274,7 @@
 				325F7FD42077F00100B3B4E7 /* Frameworks */,
 				325F7FD52077F00100B3B4E7 /* Resources */,
 				03F03436B5ABC1EB4BE62BAF /* [CP] Embed Pods Frameworks */,
+				3FC386E67E4116CA0F730E1E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -366,8 +373,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				329B228D222C785600400DAC /* Appicon.png in Resources */,
+				3266963C228FD7B900A658C6 /* clearSun.png in Resources */,
 				32FE25D6207F1EE3001C498F /* sun.png in Resources */,
 				325F7FE52077F00100B3B4E7 /* LaunchScreen.storyboard in Resources */,
+				3266963A228FCF0A00A658C6 /* clear.png in Resources */,
 				325F7FE22077F00100B3B4E7 /* Assets.xcassets in Resources */,
 				32E70D64208F04E700D6D152 /* Main.storyboard in Resources */,
 			);
@@ -396,7 +405,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Weathertime/Pods-Weathertime-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Weathertime/Pods-Weathertime-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -405,7 +414,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Weathertime/Pods-Weathertime-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Weathertime/Pods-Weathertime-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3FC386E67E4116CA0F730E1E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Weathertime/Pods-Weathertime-resources.sh",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Weathertime/Pods-Weathertime-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BDA227A41A0F9D47E30D95D1 /* [CP] Check Pods Manifest.lock */ = {

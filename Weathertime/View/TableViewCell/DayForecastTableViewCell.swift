@@ -31,7 +31,7 @@ class DayForecastTableViewCell: UITableViewCell, CLLocationManagerDelegate {
         annotation.coordinate = location
         self.mapView.addAnnotation(annotation)
         // Set the Zoom level
-        let region = MKCoordinateRegionMakeWithDistance(annotation.coordinate, 500, 500)
+        let region = MKCoordinateRegionMakeWithDistance(annotation.coordinate, 1000, 1000)
         self.mapView.setRegion((region), animated: false)
         
     }
